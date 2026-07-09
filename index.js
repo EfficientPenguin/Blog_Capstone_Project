@@ -40,6 +40,17 @@ app.get('/create-post', (req,res) => {
     res.render("create-post.ejs")
 });
 
+app.get('/delete-post-:id', (req,res) => {
+    const postId = req.params.id;
+
+    if (posts.length === 1) {
+        posts = [];
+    } else {
+        posts = posts.toSpliced(postId, postId);
+    }
+    res.redirect('/');
+});
+
 app.post('/submit-post', (req, res) => {
     // Read post content and create a new post
     let post = new Post(req.body.title, 
