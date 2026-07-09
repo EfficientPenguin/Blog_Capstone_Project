@@ -1,0 +1,20 @@
+<%- include("partials/header.ejs"); %>
+<body>
+    <div container="welcome-text">
+        <h1 id="blog-welcome">Blog Welcome</h1>
+        <p>Welcome to my first blog website! This is a capstone project</p>
+    </div>
+    <h1 id="posts-header">Posts</h1>
+    <div container="blog-grid">
+        <% if (locals.posts) { %>
+            <% for(let i = 0; i < posts.length; i++) { %>
+                <h1>posts[i].title</h1>
+                <h2>posts[i].author</h2>
+                <p>posts[i].content</p>
+            <% } %>
+        <% } else { %>
+            <h2>No posts found.</h2>
+        <% } %>
+    </div>
+</body>
+<%- include("partials/footer.ejs"); %>
