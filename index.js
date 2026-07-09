@@ -43,11 +43,7 @@ app.get('/create-post', (req,res) => {
 app.get('/delete-post-:id', (req,res) => {
     const postId = req.params.id;
 
-    if (posts.length === 1) {
-        posts = [];
-    } else {
-        posts = posts.toSpliced(postId, postId);
-    }
+    posts = posts.toSpliced(postId, 1);
     res.redirect('/');
 });
 
