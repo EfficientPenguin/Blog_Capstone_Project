@@ -10,6 +10,10 @@ import express from "express";
 const port = 3000;
 const app = express();
 
+// Middleware for static files and form support
+app.use(express.static("public"));
+app.use(express.urlencoded({extended: true}));
+
 app.get('/', (req, res) => {
     res.send("Hello");
 });
