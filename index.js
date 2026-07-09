@@ -40,10 +40,24 @@ app.get('/create-post', (req,res) => {
     res.render("create-post.ejs")
 });
 
+app.get('/edit-post-:id', (req,res) => {
+    const postId = req.params.id;
+
+    res.render("edit-post.ejs", {post: posts[postId], id: postId});
+});
+
 app.get('/delete-post-:id', (req,res) => {
     const postId = req.params.id;
 
     posts = posts.toSpliced(postId, 1);
+    res.redirect('/');
+});
+
+app.post('/submit-edit-:id', (req, res) => {
+    const postId = req.params.id;
+    const editedPost = req.body;
+
+    posts[postId] = editedPost;
     res.redirect('/');
 });
 
