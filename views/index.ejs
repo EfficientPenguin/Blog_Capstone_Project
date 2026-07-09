@@ -8,9 +8,9 @@
     <div container="blog-grid">
         <% if (locals.posts) { %>
             <% for(let i = 0; i < posts.length; i++) { %>
-                <h1>posts[i].title</h1>
-                <h2>posts[i].author</h2>
-                <p>posts[i].content</p>
+                <h1><%= posts[i].title %></h1>
+                <h2><%= posts[i].author %></h2>
+                <p><%= posts[i].content %></p>
             <% } %>
         <% } else { %>
             <h2>No posts found.</h2>

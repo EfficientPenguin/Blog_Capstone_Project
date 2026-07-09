@@ -14,12 +14,43 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const port = 3000;
 const app = express();
 
+var posts = [];
+
+class Post {
+    constructor(title, author, content){
+        this.title = title;
+        this.author = author;
+        this.content = content;
+    }
+}
+
 // Middleware for static files and form support
 app.use(express.static("public"));
 app.use(express.urlencoded({extended: true}));
 
 app.get('/', (req, res) => {
-    res.render("index.ejs");
+    if (posts.length) {
+        res.render("index.ejs", {posts});
+    } else {
+        res.render("index.ejs");
+    }
+});
+
+app.get('/create-post', (req,res) => {
+    res.render("create-post.ejs")
+});
+
+app.post('/submit-post', (req, res) => {
+    // Read post content and create a new post
+    let post = new Post(req.body.title, 
+                        req.body.author,
+                        req.body.content);
+    // Add it to the list of posts
+    posts.push(post);
+    for(let i = 0; i < posts.length; i++){
+        console.log(posts[i]);
+    }
+    res.redirect('/');
 });
 
 app.listen(port, () => {
