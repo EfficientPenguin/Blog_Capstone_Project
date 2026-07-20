@@ -1,0 +1,126 @@
+body {
+    padding: 10pt;
+}
+
+.nav-bar {
+    display: flex;
+    justify-content: center;
+    width: min-content;
+    background-color: purple;
+    border-radius: 5pt;
+}
+
+.nav-bar > h1 {
+    color: white;
+    font-size: large;
+    margin-left: 5px;
+    margin-right: 10px;
+    border-right: 2px solid gold;
+    padding-right: 10px;
+    text-wrap: nowrap;
+}
+
+h1 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+p {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+h1 > a {
+    color: white;
+}
+
+body {
+  /* Take up at least the full height of the screen */
+  min-height: 100vh; 
+  margin: 0;
+  
+  /* Turn the body into a flex container stacked vertically */
+  display: flex;
+  flex-direction: column;
+}
+
+#blog-welcome {
+    color: goldenrod;
+}
+
+#posts-header {
+    color: goldenrod;
+    text-align: center;
+}
+
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+    gap: 16pt;
+}
+
+.post-container {
+    border: 2pt solid rgb(237, 201, 238);
+    border-radius: 5pt;
+    text-align: center;
+    padding: 10pt;
+}
+
+.post-action {
+    display: flex;
+    justify-content: flex-end;
+    margin: 0pt;
+}
+
+.btn {
+    border-radius: 5pt;
+    border-color: lightgray;
+}
+
+.edit-btn {
+    background-color: rgb(246, 246, 178);
+}
+
+.delete-btn {
+    background-color: rgb(255, 185, 183);
+}
+
+button > a {
+    font-size: 12pt;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+}
+
+form > label {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    align-self: flex-start;
+}
+
+form > input {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border-radius: 5pt;
+    align-self: stretch;
+}
+
+form > input[name="content"] {
+    text-align:justify;
+    height: 100px;
+}
+
+.form-btn {
+    margin-top: 10pt;
+}
+
+footer {
+    margin-top: 50%;
+    color: slategray;
+    text-align: center;
+}
