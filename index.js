@@ -68,9 +68,6 @@ app.post('/submit-post', (req, res) => {
                         req.body.content);
     // Add it to the list of posts
     posts.push(post);
-    for(let i = 0; i < posts.length; i++){
-        console.log(posts[i]);
-    }
     res.redirect('/');
 });
 
